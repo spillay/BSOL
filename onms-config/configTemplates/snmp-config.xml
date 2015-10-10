@@ -1,0 +1,3 @@
+<snmp-config xmlns="http://xmlns.opennms.org/xsd/config/snmp" version="v1" read-community="wsa-up" timeout="1800" retry="1">
+	##DEFINITIONS##
+</snmp-config>

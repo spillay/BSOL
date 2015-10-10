@@ -1,0 +1,8 @@
+/usr/bin/psql opennms opennms -c "DELETE FROM atInterface WHERE atInterface.status = 'D';"
+/usr/bin/psql opennms opennms -c "DELETE FROM datalinkInterface WHERE datalinkInterface.status = 'D';"
+/usr/bin/psql opennms opennms -c "DELETE FROM ipRouteInterface WHERE ipRouteInterface.status = 'D';"
+/usr/bin/psql opennms opennms -c "DELETE FROM stpInterface WHERE stpInterface.status = 'D';"
+/usr/bin/psql opennms opennms -c "DELETE FROM snmpInterface WHERE snmpInterface.snmpCollect = 'D';"
+/usr/bin/psql opennms opennms -c "DELETE FROM node WHERE node.nodeType = 'D';"
+/usr/bin/psql opennms opennms -c "DELETE FROM ipInterface WHERE ipInterface.isManaged = 'D';"
+/usr/bin/psql opennms opennms -c "DELETE FROM ifServices WHERE ifServices.status = 'D';"

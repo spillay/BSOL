@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?castor class-name="org.opennms.netmgt.collectd.CollectdConfiguration"?>
+<collectd-configuration threads="50">
+    <package name="spider-server">
+                <filter>IPADDR IPLIKE *.*.*.*</filter>
+		##INCLUDEIPS##
+                <include-url>file:/opt/opennms/etc/include</include-url>
+
+                <service name="SNMP" interval="300000" user-defined="false" status="on">
+                        <parameter key="collection" value="spider-net"/>
+                        <parameter key="port" value="161"/>
+                        <parameter key="retry" value="3"/>
+                        <parameter key="timeout" value="3000"/>
+                </service>
+
+                <outage-calendar>wsa-spider</outage-calendar>
+    </package>	
+    <collector service="SNMP" class-name="org.opennms.netmgt.collectd.SnmpCollector"/>
+</collectd-configuration>
+

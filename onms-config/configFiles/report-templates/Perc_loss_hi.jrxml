@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Device summary" language="groovy" pageWidth="595" pageHeight="870" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c5884bf-6342-4beb-9d67-fe7e99c1ecf5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="240"/>
+	<subDataset name="AS2" uuid="c79f4786-4a1d-47df-9827-cb9559fb983a">
+		<queryString>
+			<![CDATA[Select * from wsa_iperf_data where interval!='0.0-10.0' and dest_ip='192.168.2.5' and src_ip='192.168.2.4' and time_slot='21']]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="date" class="java.sql.Timestamp"/>
+		<field name="src_ip" class="java.lang.String"/>
+		<field name="src_port" class="java.lang.Integer"/>
+		<field name="dest_ip" class="java.lang.String"/>
+		<field name="dest_port" class="java.lang.Integer"/>
+		<field name="proc_id" class="java.lang.Integer"/>
+		<field name="interval" class="java.lang.String"/>
+		<field name="amt_data" class="java.lang.Double"/>
+		<field name="bandwidth" class="java.lang.Double"/>
+		<field name="jitter" class="java.lang.Double"/>
+		<field name="lost_datagrams" class="java.lang.Double"/>
+		<field name="sent_datagrams" class="java.lang.Double"/>
+		<field name="perc_loss" class="java.lang.Double"/>
+		<field name="recv_oo_datagrams" class="java.lang.Double"/>
+		<field name="time_slot" class="java.lang.Integer"/>
+		<field name="min_slot" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="AS5" uuid="cd2c438c-bb14-41a6-99e2-a39fba24cfcb">
+		<queryString>
+			<![CDATA[Select * from wsa_iperf_data where interval!='0.0-10.0' and dest_ip='192.168.6.5' and src_ip='192.168.6.4' and time_slot='21']]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="date" class="java.sql.Timestamp"/>
+		<field name="src_ip" class="java.lang.String"/>
+		<field name="src_port" class="java.lang.Integer"/>
+		<field name="dest_ip" class="java.lang.String"/>
+		<field name="dest_port" class="java.lang.Integer"/>
+		<field name="proc_id" class="java.lang.Integer"/>
+		<field name="interval" class="java.lang.String"/>
+		<field name="amt_data" class="java.lang.Double"/>
+		<field name="bandwidth" class="java.lang.Double"/>
+		<field name="jitter" class="java.lang.Double"/>
+		<field name="lost_datagrams" class="java.lang.Double"/>
+		<field name="sent_datagrams" class="java.lang.Double"/>
+		<field name="perc_loss" class="java.lang.Double"/>
+		<field name="recv_oo_datagrams" class="java.lang.Double"/>
+		<field name="time_slot" class="java.lang.Integer"/>
+		<field name="min_slot" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="AC2" uuid="178d9489-e236-4f65-90bd-ba9f07b7513e">
+		<queryString language="SQL">
+			<![CDATA[Select * from wsa_iperf_data where interval!='0.0-10.0' and dest_ip='192.168.2.5' and src_ip='192.168.3.2' and time_slot='1']]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="date" class="java.sql.Timestamp"/>
+		<field name="src_ip" class="java.lang.String"/>
+		<field name="src_port" class="java.lang.Integer"/>
+		<field name="dest_ip" class="java.lang.String"/>
+		<field name="dest_port" class="java.lang.Integer"/>
+		<field name="proc_id" class="java.lang.Integer"/>
+		<field name="interval" class="java.lang.String"/>
+		<field name="amt_data" class="java.lang.Double"/>
+		<field name="bandwidth" class="java.lang.Double"/>
+		<field name="jitter" class="java.lang.Double"/>
+		<field name="lost_datagrams" class="java.lang.Double"/>
+		<field name="sent_datagrams" class="java.lang.Double"/>
+		<field name="perc_loss" class="java.lang.Double"/>
+		<field name="recv_oo_datagrams" class="java.lang.Double"/>
+		<field name="time_slot" class="java.lang.Integer"/>
+		<field name="min_slot" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="AC5" uuid="db1e6636-855e-40ef-b14f-48cdd55971a3">
+		<queryString language="SQL">
+			<![CDATA[Select * from wsa_iperf_data where interval!='0.0-10.0' and dest_ip='192.168.6.5' and src_ip='192.168.3.2' and time_slot='1']]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="date" class="java.sql.Timestamp"/>
+		<field name="src_ip" class="java.lang.String"/>
+		<field name="src_port" class="java.lang.Integer"/>
+		<field name="dest_ip" class="java.lang.String"/>
+		<field name="dest_port" class="java.lang.Integer"/>
+		<field name="proc_id" class="java.lang.Integer"/>
+		<field name="interval" class="java.lang.String"/>
+		<field name="amt_data" class="java.lang.Double"/>
+		<field name="bandwidth" class="java.lang.Double"/>
+		<field name="jitter" class="java.lang.Double"/>
+		<field name="lost_datagrams" class="java.lang.Double"/>
+		<field name="sent_datagrams" class="java.lang.Double"/>
+		<field name="perc_loss" class="java.lang.Double"/>
+		<field name="recv_oo_datagrams" class="java.lang.Double"/>
+		<field name="time_slot" class="java.lang.Integer"/>
+		<field name="min_slot" class="java.lang.Integer"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[Select * from wsa_iperf_data where interval!='0.0-11.0' and interval!='0.0-10.0']]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="date" class="java.sql.Timestamp"/>
+	<field name="src_ip" class="java.lang.String"/>
+	<field name="src_port" class="java.lang.Integer"/>
+	<field name="dest_ip" class="java.lang.String"/>
+	<field name="dest_port" class="java.lang.Integer"/>
+	<field name="proc_id" class="java.lang.Integer"/>
+	<field name="interval" class="java.lang.String"/>
+	<field name="amt_data" class="java.lang.Double"/>
+	<field name="bandwidth" class="java.lang.Double"/>
+	<field name="jitter" class="java.lang.Double"/>
+	<field name="lost_datagrams" class="java.lang.Double"/>
+	<field name="sent_datagrams" class="java.lang.Double"/>
+	<field name="perc_loss" class="java.lang.Double"/>
+	<field name="recv_oo_datagrams" class="java.lang.Double"/>
+	<field name="time_slot" class="java.lang.Integer"/>
+	<field name="min_slot" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="634" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="121" width="514" height="30" uuid="34db66b8-ba76-4d19-9bf5-eec9f5a1995a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="20" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Iperf Tests chart reports]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="3" width="211" height="73" uuid="d2c7375c-2b46-46ff-b44f-e4c6045de858"/>
+				<imageExpression><![CDATA["wsa1.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="82" width="554" height="33" uuid="3d19bff4-f0b8-4144-8a42-6c71856ba987"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="24" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[UP-Die Heuwel School Test Setup]]></text>
+			</staticText>
+			<image>
+				<reportElement x="247" y="0" width="307" height="74" uuid="947234ac-7b60-4ad4-972a-8539ff4cdfe0"/>
+				<imageExpression><![CDATA["/home/malcolm/config2/onms-config/configFiles/report-templates/UP_logo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="14" y="191" width="540" height="283" uuid="9cb4ba5f-0e19-4ca3-806d-44a01267be08"/>
+				<imageExpression><![CDATA["/home/malcolm/config2/onms-config/configFiles/report-templates/UP-skul setup.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="81" y="153" width="405" height="28" forecolor="#EA172F" uuid="fa943cd2-c549-4982-b187-1e41cb935a04"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[High interference loss performance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="477" width="525" height="141" uuid="cec39aee-1d8b-4ef4-a9a3-0de341fd5cba"/>
+				<textElement textAlignment="Justified">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[The graphs of this report illustrate the typical performance of various segments of the network in high interference conditions. Packet loss would be unacceptable when it is > 2%. The four segments presented are:
+-the link between the two 2.4GHz antennas (AS2-AC2)
+- the link between the two 5GHz antennas (AS5-AC5)
+-the link between the server and the 2.4GHz antenna (RS1-AS2)
+-the link between the server and the 5GHz antenna (RS1-AS5)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<barChart>
+				<chart isShowLegend="false">
+					<reportElement x="14" y="10" width="525" height="185" uuid="6660d6ed-d9d9-4522-a9ce-c84257533aa9"/>
+					<chartTitle position="Top">
+						<font size="14" isBold="true" isUnderline="true"/>
+						<titleExpression><![CDATA["AS2-AC2 segment loss perfomance"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Left"/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="AS2" uuid="63235c41-7ab7-4160-a8d3-256e2f1d0d01"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["% loss"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{interval}.toString()]]></categoryExpression>
+						<valueExpression><![CDATA[$F{perc_loss}.doubleValue()]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA["Interval"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true" isItalic="false"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["% loss"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat labelColor="#FF1000">
+							<labelFont>
+								<font size="12" isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<barChart>
+				<chart isShowLegend="false">
+					<reportElement x="14" y="213" width="525" height="186" uuid="39b0244b-8649-45c4-8e01-5b2f1311e405"/>
+					<chartTitle color="#0008FF">
+						<font size="14" isBold="true" isUnderline="true"/>
+						<titleExpression><![CDATA["AS5-AC2 segment loss perfomance"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="AS5" uuid="9e26326c-8995-4b77-a03a-1a2cc02313f6"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["% loss"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{interval}.toString()]]></categoryExpression>
+						<valueExpression><![CDATA[$F{perc_loss}.doubleValue()]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA["Interval"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["% loss"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat labelColor="#FD022D">
+							<labelFont>
+								<font size="12" isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<barChart>
+				<chart isShowLegend="false">
+					<reportElement x="14" y="416" width="525" height="181" uuid="3f0e844b-4512-45df-becd-6d241643c1bd"/>
+					<chartTitle>
+						<font size="14" isBold="true" isUnderline="true"/>
+						<titleExpression><![CDATA["Server-AS2 segment loss perfomance"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="AC2" uuid="0ab38f90-47ac-477d-8ea4-30f25f32349c"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["% loss"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{interval}.toString()]]></categoryExpression>
+						<valueExpression><![CDATA[$F{perc_loss}.doubleValue()]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA["Interval"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["% loss"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat labelColor="#FD301E">
+							<labelFont>
+								<font isBold="true" isItalic="false"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<barChart>
+				<chart isShowLegend="false">
+					<reportElement x="14" y="614" width="525" height="174" uuid="b6c07acd-60f5-4315-8b08-9b7e1a628edc"/>
+					<chartTitle position="Top" color="#3E2AFA">
+						<font size="14" isBold="true" isUnderline="true"/>
+						<titleExpression><![CDATA["Server-AS5 segment loss perfomance"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="AC5" uuid="d2585ed5-5d04-4a87-afec-5ae2e589bcd9"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["% loss"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{interval}.toString()]]></categoryExpression>
+						<valueExpression><![CDATA[$F{perc_loss}.doubleValue()]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA["Interval"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["% loss"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat labelColor="#F3220B">
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28">
+			<textField>
+				<reportElement x="257" y="8" width="80" height="20" uuid="eb2e8b19-61bb-4ded-963a-4852fc4edfd4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="337" y="8" width="40" height="20" uuid="5f58eebd-497b-451d-8533-aa1fde2a00be"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

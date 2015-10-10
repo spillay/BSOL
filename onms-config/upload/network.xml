@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model-import foreign-source="wsa-spider" xmlns="http://xmlns.opennms.org/xsd/config/model-import">
+     <node node-label="router" foreign-id="1423495500287454412" parent-foreign-id="1423495500288547147">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.3.1" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+     </node>
+     <node node-label="server" foreign-id="1423495500288547147">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.3.2" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+     </node>
+     <node node-label="antennae-1" foreign-id="1423495500289514678" parent-foreign-id="">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.2.4" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+<category name="Antennae"/>
+<category name="con1"/>
+     </node>
+     <node node-label="antennae-2" foreign-id="1423495500290490527" parent-foreign-id="">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.6.4" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+<category name="Antennae"/>
+<category name="con1"/>
+     </node>
+     <node node-label="antennae-3" foreign-id="1423495500291500889" parent-foreign-id="1423495500289514678">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.2.5" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+<category name="Antennae"/>
+<category name="con1"/>
+     </node>
+     <node node-label="antennae-4" foreign-id="1423495500292562551" parent-foreign-id="1423495500290490527">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.6.5" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+<category name="Antennae"/>
+<category name="con1"/>
+     </node>
+     <node node-label="spiderRadio-1" foreign-id="1423495500293681640" parent-foreign-id="1423495500291500889">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.2.10" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+     </node>
+     <node node-label="spiderRadio-2" foreign-id="1423495500294850808" parent-foreign-id="1423495500292562551">
+        <interface status="1" snmp-primary="P" ip-addr="192.168.6.10" descr="">
+              <monitored-service service-name="ICMP"/>
+              <monitored-service service-name="SNMP"/>
+        </interface>
+     </node>
+</model-import>

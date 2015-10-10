@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<outages>
+<outage name="wsa-spider" type="weekly">
+  <time day="sunday" begins="12:30:00" ends="12:45:00"/>
+  <interface address="192.168.43.202"/>
+</outage>
+</outages>
+
