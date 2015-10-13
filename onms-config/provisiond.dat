@@ -1,8 +1,4 @@
-router:192.168.20.1:server:Routers:con1
-server:192.168.20.2:none:Servers:con1
-AS5:192.168.21.4:router:Antennae:con1
-AS2:192.168.22.4:router:Antennae:con1
-AC5:192.168.21.5:AS5:Antennae:con1
-AC2:192.168.22.5:AS2:Antennae:con1
-spiderRadio-1:192.168.21.7:AC5:SpiderRadios:con1
-spiderRadio-2:192.168.22.7:AC2:SpiderRadios:con1
+server:10.5.5.3:none:Servers:con1
+internet:10.5.5.1:none:Servers:con1
+AS5:10.5.5.40:internet:Antennae:con1
+AS2:10.5.5.41:internet:Antennae:con1
