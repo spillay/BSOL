@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Device summary" language="groovy" pageWidth="595" pageHeight="870" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c5884bf-6342-4beb-9d67-fe7e99c1ecf5">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="144"/>
+	<property name="ireport.y" value="288"/>
 	<subDataset name="AS2" uuid="c79f4786-4a1d-47df-9827-cb9559fb983a">
 		<queryString>
 			<![CDATA[Select * from wsa_iperf_data where interval!='0.0-10.0' and dest_ip='192.168.2.5' and src_ip='192.168.2.4' and time_slot='1']]>

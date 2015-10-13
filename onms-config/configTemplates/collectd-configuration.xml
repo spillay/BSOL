@@ -4,7 +4,7 @@
     <package name="spider-server">
                 <filter>IPADDR IPLIKE *.*.*.*</filter>
 		##INCLUDEIPS##
-                <include-url>file:/opt/opennms/etc/include</include-url>
+                <include-url>file:/etc/opennms/include</include-url>
 
                 <service name="SNMP" interval="300000" user-defined="false" status="on">
                         <parameter key="collection" value="spider-net"/>

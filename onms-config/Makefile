@@ -6,7 +6,7 @@ DATACOLLECT=$(CONFIGFILES)datacollection/
 REPTEMPLATES=$(CONFIGFILES)report-templates/
 REPIMAGES=$(CONFIGFILES)report-templates/assets/images/
 
-all: provision collect reports
+all: provision collect reports config
 
 reports:
 	if [ ! -d "./$(REPTEMPLATES)" ];then mkdir $(REPTEMPLATES); fi

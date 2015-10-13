@@ -6,6 +6,22 @@
       <storageStrategy class="org.opennms.netmgt.dao.support.IndexStorageStrategy"/>
      </resourceType>
 
+     <resourceType name="procIndex" label="Process Table Index (UCD-SNMP MIB)"
+                 resourceLabel="${prNames} (index ${index})">
+         <persistenceSelectorStrategy class="org.opennms.netmgt.collectd.PersistAllSelectorStrategy"/>
+         <storageStrategy class="org.opennms.netmgt.dao.support.IndexStorageStrategy"/>
+    </resourceType>
+
+    <group name="net-snmp-proc" ifType="all">
+       <mibObj oid=".1.3.6.1.4.1.2021.2.1.1" instance="procIndex" alias="prIndex" type="integer" />
+       <mibObj oid=".1.3.6.1.4.1.2021.2.1.2" instance="procIndex" alias="prNames" type="string" />
+       <mibObj oid=".1.3.6.1.4.1.2021.2.1.3" instance="procIndex" alias="prMin" type="gauge" />
+       <mibObj oid=".1.3.6.1.4.1.2021.2.1.4" instance="procIndex" alias="prMax" type="gauge" />
+       <mibObj oid=".1.3.6.1.4.1.2021.2.1.5" instance="procIndex" alias="prCount" type="gauge" />
+       <mibObj oid=".1.3.6.1.4.1.2021.2.1.100" instance="procIndex" alias="prErrorFlag" type="integer" />
+       <mibObj oid=".1.3.6.1.4.1.2021.2.1.101" instance="procIndex" alias="prErrMessage" type="string" />
+     </group>
+
       <!-- data from standard (mib-2) sources -->
       <group name="mib2-ip" ifType="all">
         <mibObj oid=".1.3.6.1.2.1.2.2.1.10" instance="ipIndex" alias="ifInOctets"      type="counter" />
@@ -159,6 +175,7 @@
       <systemDef name="Spider-Server">
         <sysoidMask>.1.3.6.1.4.1.</sysoidMask>
         <collect>
+          <includeGroup>net-snmp-proc</includeGroup>
           <includeGroup>mib2-ip</includeGroup>
           <includeGroup>mib2-interfaces</includeGroup>
           <includeGroup>mib2-tcp</includeGroup>

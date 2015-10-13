@@ -1,18 +1,12 @@
 <snmp-config xmlns="http://xmlns.opennms.org/xsd/config/snmp" version="v1" read-community="wsa-up" timeout="1800" retry="1">
 	
 	<definition version="v1" read-community="wsa-up" >
-		<range begin="192.168.2.1" end="192.168.2.254"/>
+		<range begin="192.168.20.1" end="192.168.20.254"/>
 	</definition>
 	<definition version="v1" read-community="wsa-up" >
-		<range begin="192.168.3.1" end="192.168.3.254"/>
+		<range begin="192.168.21.1" end="192.168.21.254"/>
 	</definition>
 	<definition version="v1" read-community="wsa-up" >
-		<range begin="192.168.4.1" end="192.168.4.254"/>
-	</definition>
-	<definition version="v1" read-community="wsa-up" >
-		<range begin="192.168.5.1" end="192.168.5.254"/>
-	</definition>
-	<definition version="v1" read-community="wsa-up" >
-		<range begin="192.168.6.1" end="192.168.6.254"/>
+		<range begin="192.168.22.1" end="192.168.22.254"/>
 	</definition>
 </snmp-config>
