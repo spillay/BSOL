@@ -1,7 +1,8 @@
 # put common definitions in here
 CC = gcc
-CFLAGS = -g -O2  -I/usr/include/lzo -I/usr/include/openssl 
-LDFLAGS =   -lz -llzo2 -lcrypto
+CFLAGS = -g -O2 -fPIC -I/usr/include/lzo -I/usr/include/openssl
+LDFLAGS =   -lz -llzo2 -lcrypto -lc
+SOFLAGS = -shared -fPIC -Wl,-soname,libspvtun.so.1
 
 YACC = bison -y
 YACCFLAGS = -d

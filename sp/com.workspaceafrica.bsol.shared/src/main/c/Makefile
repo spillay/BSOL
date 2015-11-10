@@ -11,13 +11,13 @@ OBJS = main.o cfg_file.tab.o cfg_file.lex.o server.o client.o lib.o \
 	
 LFD_OBJS = lfd_shaper.o lfd_zlib.o lfd_lzo.o lfd_encrypt.o lfd_legacy_encrypt.o
 	
-TARGET_LIB=vtun.so	
+TARGET_LIB=spvtun.so.1.0.0	
 	
 %.o: %.c vtun.h lib.h
 	$(CC) $(CFLAGS) $(DEFS) -c $<
 
 SPClient: $(OBJS) $(LFD_OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET_LIB) $(OBJS) $(LFD_OBJS) $(LDFLAGS)
+	$(CC) $(SOFLAGS) -o $(TARGET_LIB) $(OBJS) $(LFD_OBJS) $(LDFLAGS)
 	
 cfg_file.tab.h:
 	$(YACC) $(YACCFLAGS) -b cfg_file cfg_file.y
