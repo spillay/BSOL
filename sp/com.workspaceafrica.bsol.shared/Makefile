@@ -5,4 +5,5 @@ all:
 	cd src/main/c; make
 
 clean:
+	rm -rf Debug
 	cd src/main/c; make clean

@@ -11,12 +11,13 @@ OBJS = main.o cfg_file.tab.o cfg_file.lex.o server.o client.o lib.o \
 	
 LFD_OBJS = lfd_shaper.o lfd_zlib.o lfd_lzo.o lfd_encrypt.o lfd_legacy_encrypt.o
 	
+TARGET_LIB=vtun.so	
 	
 %.o: %.c vtun.h lib.h
 	$(CC) $(CFLAGS) $(DEFS) -c $<
 
 SPClient: $(OBJS) $(LFD_OBJS)
-	$(CC) $(CFLAGS) -o SPClient $(OBJS) $(LFD_OBJS) $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $(TARGET_LIB) $(OBJS) $(LFD_OBJS) $(LDFLAGS)
 	
 cfg_file.tab.h:
 	$(YACC) $(YACCFLAGS) -b cfg_file cfg_file.y
@@ -27,4 +28,4 @@ cfg_file.lex.c: cfg_file.l cfg_kwords.h config.h cfg_file.tab.h
 	$(LEX) $(LEXFLAGS) cfg_file.l > cfg_file.lex.c 
 	
 clean:
-	rm -f core cfg_file.tab.* cfg_file.lex.* *.o *~ .#* *.bak SPClient
+	rm -f core cfg_file.tab.* cfg_file.lex.* *.o *~ .#* *.bak SPClient $(TARGET_LIB)

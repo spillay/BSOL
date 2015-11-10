@@ -372,10 +372,10 @@ int linkfd(struct vtun_host *host)
 
      /* Build modules stack */
      if(host->flags & VTUN_ZLIB)
-	lfd_add_mod(&lfd_zlib);
+    	 lfd_add_mod(&lfd_zlib);
 
-     if(host->flags & VTUN_LZO)
-	lfd_add_mod(&lfd_lzo);
+     //if(host->flags & VTUN_LZO)
+    //	 lfd_add_mod(&lfd_lzo);
 
      if(host->flags & VTUN_ENCRYPT)
        if(host->cipher == VTUN_LEGACY_ENCRYPT) {
