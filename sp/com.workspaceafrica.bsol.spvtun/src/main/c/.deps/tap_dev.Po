@@ -1,3 +1,0 @@
-tap_dev.o: tap_dev.c /usr/include/stdc-predef.h
-
-/usr/include/stdc-predef.h:
