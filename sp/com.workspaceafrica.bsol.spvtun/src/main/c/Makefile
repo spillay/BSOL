@@ -52,52 +52,20 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
-bin_PROGRAMS = client$(EXEEXT)
 subdir = src/main/c
 DIST_COMMON = $(include_HEADERS) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
+	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
+	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(includedir)"
-PROGRAMS = $(bin_PROGRAMS)
-am__objects_1 = cfg_file.tab.$(OBJEXT) cfg_file.lex.$(OBJEXT)
-am__objects_2 = main.$(OBJEXT) server.$(OBJEXT) client.$(OBJEXT) \
-	lib.$(OBJEXT) llist.$(OBJEXT) auth.$(OBJEXT) tunnel.$(OBJEXT) \
-	lock.$(OBJEXT) netlib.$(OBJEXT) tun_dev.$(OBJEXT) \
-	tap_dev.$(OBJEXT) pty_dev.$(OBJEXT) pipe_dev.$(OBJEXT) \
-	tcp_proto.$(OBJEXT) udp_proto.$(OBJEXT) linkfd.$(OBJEXT)
-am__objects_3 = lfd_shaper.$(OBJEXT) lfd_zlib.$(OBJEXT) \
-	lfd_lzo.$(OBJEXT) lfd_encrypt.$(OBJEXT) \
-	lfd_legacy_encrypt.$(OBJEXT)
-am_client_OBJECTS = $(am__objects_1) $(am__objects_2) $(am__objects_3)
-client_OBJECTS = $(am_client_OBJECTS)
-client_DEPENDENCIES =
-DEFAULT_INCLUDES = -I. -I$(top_builddir)
-depcomp = $(SHELL) $(top_srcdir)/depcomp
-am__depfiles_maybe = depfiles
-am__mv = mv -f
-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-CCLD = $(CC)
-LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-	$(LDFLAGS) -o $@
-SOURCES = $(client_SOURCES)
-DIST_SOURCES = $(client_SOURCES)
-am__can_run_installinfo = \
-  case $$AM_UPDATE_INFO_DIR in \
-    n|no|NO) false;; \
-    *) (install-info --version) >/dev/null 2>&1;; \
-  esac
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
@@ -125,6 +93,41 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
+am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"
+LTLIBRARIES = $(lib_LTLIBRARIES)
+libspvtun_la_LIBADD =
+am__objects_1 = cfg_file.tab.lo cfg_file.lex.lo
+am__objects_2 = main.lo server.lo client.lo lib.lo llist.lo auth.lo \
+	tunnel.lo lock.lo netlib.lo tun_dev.lo tap_dev.lo pty_dev.lo \
+	pipe_dev.lo tcp_proto.lo udp_proto.lo linkfd.lo
+am__objects_3 = lfd_shaper.lo lfd_zlib.lo lfd_lzo.lo lfd_encrypt.lo \
+	lfd_legacy_encrypt.lo
+am_libspvtun_la_OBJECTS = $(am__objects_1) $(am__objects_2) \
+	$(am__objects_3)
+libspvtun_la_OBJECTS = $(am_libspvtun_la_OBJECTS)
+libspvtun_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(libspvtun_la_LDFLAGS) $(LDFLAGS) -o $@
+DEFAULT_INCLUDES = -I. -I$(top_builddir)
+depcomp = $(SHELL) $(top_srcdir)/depcomp
+am__depfiles_maybe = depfiles
+am__mv = mv -f
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+	$(LDFLAGS) -o $@
+SOURCES = $(libspvtun_la_SOURCES)
+DIST_SOURCES = $(libspvtun_la_SOURCES)
+am__can_run_installinfo = \
+  case $$AM_UPDATE_INFO_DIR in \
+    n|no|NO) false;; \
+    *) (install-info --version) >/dev/null 2>&1;; \
+  esac
 HEADERS = $(include_HEADERS)
 ETAGS = etags
 CTAGS = ctags
@@ -264,6 +267,8 @@ PARSER = cfg_file.tab.h cfg_file.tab.c cfg_file.lex.c
 BUILT_SOURCES = cfg_file.tab.h
 AM_YFLAGS = -d
 AM_LFLAGS = -t
+lib_LTLIBRARIES = libspvtun.la
+#bin_PROGRAMS = client
 OBJS = main.c server.c client.c lib.c \
        llist.c auth.c tunnel.c lock.c netlib.c  \
        tun_dev.c tap_dev.c pty_dev.c pipe_dev.c \
@@ -271,8 +276,10 @@ OBJS = main.c server.c client.c lib.c \
        linkfd.c 
 
 LFD_OBJS = lfd_shaper.c lfd_zlib.c lfd_lzo.c lfd_encrypt.c lfd_legacy_encrypt.c
-client_SOURCES = $(PARSER) $(OBJS) $(LFD_OBJS)
-client_LDADD = -lfl
+#client_SOURCES = $(PARSER) $(OBJS) $(LFD_OBJS)
+libspvtun_la_SOURCES = $(PARSER) $(OBJS) $(LFD_OBJS)
+libspvtun_la_LDFLAGS = -version-info 0:0:0
+#client_LDADD = -lfl
 include_HEADERS = vtun.h
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -309,55 +316,40 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-install-binPROGRAMS: $(bin_PROGRAMS)
+install-libLTLIBRARIES: $(lib_LTLIBRARIES)
 	@$(NORMAL_INSTALL)
-	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
-	fi; \
-	for p in $$list; do echo "$$p $$p"; done | \
-	sed 's/$(EXEEXT)$$//' | \
-	while read p p1; do if test -f $$p || test -f $$p1; \
-	  then echo "$$p"; echo "$$p"; else :; fi; \
-	done | \
-	sed -e 'p;s,.*/,,;n;h' -e 's|.*|.|' \
-	    -e 'p;x;s,.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/' | \
-	sed 'N;N;N;s,\n, ,g' | \
-	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1 } \
-	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
-	    if ($$2 == $$4) files[d] = files[d] " " $$1; \
-	    else { print "f", $$3 "/" $$4, $$1; } } \
-	  END { for (d in files) print "f", d, files[d] }' | \
-	while read type dir files; do \
-	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
-	    test -z "$$files" || { \
-	    echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(bindir)$$dir'"; \
-	    $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(bindir)$$dir" || exit $$?; \
-	    } \
-	; done
+	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
+	list2=; for p in $$list; do \
+	  if test -f $$p; then \
+	    list2="$$list2 $$p"; \
+	  else :; fi; \
+	done; \
+	test -z "$$list2" || { \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(libdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(libdir)" || exit 1; \
+	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(libdir)'"; \
+	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(libdir)"; \
+	}
 
-uninstall-binPROGRAMS:
+uninstall-libLTLIBRARIES:
 	@$(NORMAL_UNINSTALL)
-	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
-	files=`for p in $$list; do echo "$$p"; done | \
-	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
-	      -e 's/$$/$(EXEEXT)/' `; \
-	test -n "$$list" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(bindir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(bindir)" && rm -f $$files
+	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
+	for p in $$list; do \
+	  $(am__strip_dir) \
+	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(libdir)/$$f'"; \
+	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(libdir)/$$f"; \
+	done
 
-clean-binPROGRAMS:
-	@list='$(bin_PROGRAMS)'; test -n "$$list" || exit 0; \
-	echo " rm -f" $$list; \
-	rm -f $$list || exit $$?; \
-	test -n "$(EXEEXT)" || exit 0; \
-	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
-	echo " rm -f" $$list; \
-	rm -f $$list
-client$(EXEEXT): $(client_OBJECTS) $(client_DEPENDENCIES) $(EXTRA_client_DEPENDENCIES) 
-	@rm -f client$(EXEEXT)
-	$(LINK) $(client_OBJECTS) $(client_LDADD) $(LIBS)
+clean-libLTLIBRARIES:
+	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
+	  test "$$dir" != "$$p" || dir=.; \
+	  echo "rm -f \"$${dir}/so_locations\""; \
+	  rm -f "$${dir}/so_locations"; \
+	done
+libspvtun.la: $(libspvtun_la_OBJECTS) $(libspvtun_la_DEPENDENCIES) $(EXTRA_libspvtun_la_DEPENDENCIES) 
+	$(libspvtun_la_LINK) -rpath $(libdir) $(libspvtun_la_OBJECTS) $(libspvtun_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -365,29 +357,29 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/auth.Po
-include ./$(DEPDIR)/cfg_file.lex.Po
-include ./$(DEPDIR)/cfg_file.tab.Po
-include ./$(DEPDIR)/client.Po
-include ./$(DEPDIR)/lfd_encrypt.Po
-include ./$(DEPDIR)/lfd_legacy_encrypt.Po
-include ./$(DEPDIR)/lfd_lzo.Po
-include ./$(DEPDIR)/lfd_shaper.Po
-include ./$(DEPDIR)/lfd_zlib.Po
-include ./$(DEPDIR)/lib.Po
-include ./$(DEPDIR)/linkfd.Po
-include ./$(DEPDIR)/llist.Po
-include ./$(DEPDIR)/lock.Po
-include ./$(DEPDIR)/main.Po
-include ./$(DEPDIR)/netlib.Po
-include ./$(DEPDIR)/pipe_dev.Po
-include ./$(DEPDIR)/pty_dev.Po
-include ./$(DEPDIR)/server.Po
-include ./$(DEPDIR)/tap_dev.Po
-include ./$(DEPDIR)/tcp_proto.Po
-include ./$(DEPDIR)/tun_dev.Po
-include ./$(DEPDIR)/tunnel.Po
-include ./$(DEPDIR)/udp_proto.Po
+include ./$(DEPDIR)/auth.Plo
+include ./$(DEPDIR)/cfg_file.lex.Plo
+include ./$(DEPDIR)/cfg_file.tab.Plo
+include ./$(DEPDIR)/client.Plo
+include ./$(DEPDIR)/lfd_encrypt.Plo
+include ./$(DEPDIR)/lfd_legacy_encrypt.Plo
+include ./$(DEPDIR)/lfd_lzo.Plo
+include ./$(DEPDIR)/lfd_shaper.Plo
+include ./$(DEPDIR)/lfd_zlib.Plo
+include ./$(DEPDIR)/lib.Plo
+include ./$(DEPDIR)/linkfd.Plo
+include ./$(DEPDIR)/llist.Plo
+include ./$(DEPDIR)/lock.Plo
+include ./$(DEPDIR)/main.Plo
+include ./$(DEPDIR)/netlib.Plo
+include ./$(DEPDIR)/pipe_dev.Plo
+include ./$(DEPDIR)/pty_dev.Plo
+include ./$(DEPDIR)/server.Plo
+include ./$(DEPDIR)/tap_dev.Plo
+include ./$(DEPDIR)/tcp_proto.Plo
+include ./$(DEPDIR)/tun_dev.Plo
+include ./$(DEPDIR)/tunnel.Plo
+include ./$(DEPDIR)/udp_proto.Plo
 
 .c.o:
 	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -522,9 +514,9 @@ distdir: $(DISTFILES)
 check-am: all-am
 check: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) check-am
-all-am: Makefile $(PROGRAMS) $(HEADERS)
+all-am: Makefile $(LTLIBRARIES) $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(includedir)"; do \
+	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -561,7 +553,8 @@ maintainer-clean-generic:
 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
 clean: clean-am
 
-clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
+clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
+	mostlyclean-am
 
 distclean: distclean-am
 	-rm -rf ./$(DEPDIR)
@@ -587,7 +580,7 @@ install-dvi: install-dvi-am
 
 install-dvi-am:
 
-install-exec-am: install-binPROGRAMS
+install-exec-am: install-libLTLIBRARIES
 
 install-html: install-html-am
 
@@ -627,24 +620,24 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-binPROGRAMS uninstall-includeHEADERS
+uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES
 
 .MAKE: all check install install-am install-strip
 
-.PHONY: CTAGS GTAGS all all-am check check-am clean clean-binPROGRAMS \
-	clean-generic clean-libtool ctags distclean distclean-compile \
-	distclean-generic distclean-libtool distclean-tags distdir dvi \
-	dvi-am html html-am info info-am install install-am \
-	install-binPROGRAMS install-data install-data-am install-dvi \
+.PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
+	clean-libLTLIBRARIES clean-libtool ctags distclean \
+	distclean-compile distclean-generic distclean-libtool \
+	distclean-tags distdir dvi dvi-am html html-am info info-am \
+	install install-am install-data install-data-am install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-includeHEADERS install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
+	install-info-am install-libLTLIBRARIES install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
 	maintainer-clean-generic mostlyclean mostlyclean-compile \
 	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags uninstall uninstall-am uninstall-binPROGRAMS \
-	uninstall-includeHEADERS
+	tags uninstall uninstall-am uninstall-includeHEADERS \
+	uninstall-libLTLIBRARIES
 
 cfg_file.tab.h:
 	$(YACC) $(YACCFLAGS) -b cfg_file cfg_file.y
