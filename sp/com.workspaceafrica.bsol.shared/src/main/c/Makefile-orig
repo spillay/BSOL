@@ -15,6 +15,7 @@ TARGET_LIB=spvtun.so.1.0.0
 	
 %.o: %.c vtun.h lib.h
 	$(CC) $(CFLAGS) $(DEFS) -c $<
+	
 
 SPClient: $(OBJS) $(LFD_OBJS)
 	$(CC) $(SOFLAGS) -o $(TARGET_LIB) $(OBJS) $(LFD_OBJS) $(LDFLAGS)
