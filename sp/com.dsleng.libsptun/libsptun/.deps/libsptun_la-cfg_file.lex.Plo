@@ -1,0 +1,3 @@
+libsptun_la-cfg_file.lex.lo: cfg_file.lex.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

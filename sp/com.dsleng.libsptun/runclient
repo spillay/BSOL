@@ -1,0 +1,1 @@
+sudo SPClient/SPClient -f /usr/local/etc/vtund-server.conf s1 127.0.0.1

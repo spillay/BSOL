@@ -146,10 +146,7 @@ int yyerror(char *s);
 # define YYERROR_VERBOSE 0
 #endif
 
-/* In a future release of Bison, this section will be replaced
-   by #include "cfg_file.tab.h".  */
-#ifndef YY_YY_CFG_FILE_TAB_H_INCLUDED
-# define YY_YY_CFG_FILE_TAB_H_INCLUDED
+
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -250,7 +247,7 @@ union YYSTYPE
    int  num;
    struct { int num1; int num2; } dnum;
 
-#line 254 "cfg_file.tab.c" /* yacc.c:355  */
+#line 251 "cfg_file.tab.c" /* yacc.c:355  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -261,11 +258,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_CFG_FILE_TAB_H_INCLUDED  */
+
 
 /* Copy the second part of user declarations.  */
 
-#line 269 "cfg_file.tab.c" /* yacc.c:358  */
+#line 266 "cfg_file.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1461,7 +1458,7 @@ yyreduce:
     { 
 		  parse_host = &default_host; 
                 }
-#line 1465 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1462 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
@@ -1486,7 +1483,7 @@ yyreduce:
 		  llist_copy(&default_host.down,&parse_host->down,cp_cmd,NULL);
 
 		}
-#line 1490 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1487 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
@@ -1502,7 +1499,7 @@ yyreduce:
 		  	llist_add(&host_list, (void *)parse_host);
 		  }
 		}
-#line 1506 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1503 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
@@ -1511,7 +1508,7 @@ yyreduce:
 		  cfg_error("Invalid clause '%s'",(yyvsp[0].str));
 		  YYABORT;
 		}
-#line 1515 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1512 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
@@ -1520,7 +1517,7 @@ yyreduce:
 			  if(vtun.bind_addr.port == -1)
 			     vtun.bind_addr.port = (yyvsp[0].num);
 			}
-#line 1524 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1521 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
@@ -1529,7 +1526,7 @@ yyreduce:
 			  if(vtun.svr_addr == NULL)
 			    vtun.svr_addr = strdup((yyvsp[0].str));
 			}
-#line 1533 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1530 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
@@ -1538,7 +1535,7 @@ yyreduce:
 			  if(vtun.svr_type == -1)
 			     vtun.svr_type = (yyvsp[0].num);
 			}
-#line 1542 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1539 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
@@ -1547,7 +1544,7 @@ yyreduce:
 			  if(vtun.timeout == -1)
 			     vtun.timeout = (yyvsp[0].num); 	
 			}
-#line 1551 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1548 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
@@ -1556,7 +1553,7 @@ yyreduce:
 			  free(vtun.ppp);
 			  vtun.ppp = strdup((yyvsp[0].str));
 			}
-#line 1560 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1557 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
@@ -1565,7 +1562,7 @@ yyreduce:
 			  free(vtun.ifcfg);
 			  vtun.ifcfg = strdup((yyvsp[0].str));
 			}
-#line 1569 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1566 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
@@ -1574,7 +1571,7 @@ yyreduce:
 			  free(vtun.route);  
 			  vtun.route = strdup((yyvsp[0].str)); 	
 			}
-#line 1578 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1575 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
@@ -1583,7 +1580,7 @@ yyreduce:
 			  free(vtun.fwall);  
 			  vtun.fwall = strdup((yyvsp[0].str)); 	
 			}
-#line 1587 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1584 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
@@ -1592,7 +1589,7 @@ yyreduce:
 			  free(vtun.iproute);  
 			  vtun.iproute = strdup((yyvsp[0].str)); 	
 			}
-#line 1596 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1593 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
@@ -1601,7 +1598,7 @@ yyreduce:
 			  cfg_error("Unknown option '%s'",(yyvsp[0].str));
 			  YYABORT;
 			}
-#line 1605 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1602 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
@@ -1610,7 +1607,7 @@ yyreduce:
 			  vtun.bind_addr.name = strdup((yyvsp[0].str));
 			  vtun.bind_addr.type = VTUN_ADDR_NAME;
 			}
-#line 1614 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1611 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
@@ -1619,7 +1616,7 @@ yyreduce:
 			  vtun.bind_addr.name = strdup((yyvsp[0].str));
 			  vtun.bind_addr.type = VTUN_ADDR_IFACE;
 			}
-#line 1623 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1620 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
@@ -1628,7 +1625,7 @@ yyreduce:
 			  vtun.bind_addr.name = strdup((yyvsp[0].str));
 			  vtun.bind_addr.type = VTUN_ADDR_IFACE;
 			}
-#line 1632 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1629 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
@@ -1637,7 +1634,7 @@ yyreduce:
 			  cfg_error("Unknown option '%s'",(yyvsp[0].str));
 			  YYABORT;
 			}
-#line 1641 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1638 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
@@ -1645,7 +1642,7 @@ yyreduce:
     {
                           vtun.syslog = (yyvsp[0].num);
   			}
-#line 1649 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1646 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
@@ -1656,7 +1653,7 @@ yyreduce:
                             YYABORT;
                           }
                         }
-#line 1660 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1657 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
@@ -1665,7 +1662,7 @@ yyreduce:
    			  cfg_error("Unknown syslog option '%s'",(yyvsp[0].str));
   			  YYABORT;
 			}
-#line 1669 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1666 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
@@ -1674,7 +1671,7 @@ yyreduce:
 			  free(parse_host->passwd);
 			  parse_host->passwd = strdup((yyvsp[0].str));
 			}
-#line 1678 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1675 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
@@ -1683,7 +1680,7 @@ yyreduce:
 			  free(parse_host->dev);
 			  parse_host->dev = strdup((yyvsp[0].str));
 			}
-#line 1687 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1684 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
@@ -1691,7 +1688,7 @@ yyreduce:
     { 
 			  parse_host->multi = (yyvsp[0].num);
 			}
-#line 1695 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1692 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 39:
@@ -1699,7 +1696,7 @@ yyreduce:
     { 
 			  parse_host->timeout = (yyvsp[0].num);
 			}
-#line 1703 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1700 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
@@ -1711,7 +1708,7 @@ yyreduce:
 			  } else 
 			     parse_host->flags &= ~VTUN_SHAPE;
 			}
-#line 1715 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1712 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
@@ -1724,7 +1721,7 @@ yyreduce:
 			  } else 
 			     parse_host->flags &= ~VTUN_SHAPE;
 			}
-#line 1728 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1725 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
@@ -1732,7 +1729,7 @@ yyreduce:
     {
 			  parse_host->flags &= ~(VTUN_ZLIB | VTUN_LZO); 
 			}
-#line 1736 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1733 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
@@ -1744,7 +1741,7 @@ yyreduce:
 			  } else
 			     parse_host->flags &= ~VTUN_ENCRYPT;
 			}
-#line 1748 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1745 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
@@ -1752,7 +1749,7 @@ yyreduce:
     {
 			  parse_host->flags &= ~VTUN_KEEP_ALIVE; 
 			}
-#line 1756 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1753 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
@@ -1763,7 +1760,7 @@ yyreduce:
 			  else
 			     parse_host->flags &= ~VTUN_STAT;
 			}
-#line 1767 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1764 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
@@ -1774,7 +1771,7 @@ yyreduce:
 			  if(vtun.persist == -1) 
 			     vtun.persist = (yyvsp[0].num); 	
 			}
-#line 1778 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1775 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
@@ -1783,7 +1780,7 @@ yyreduce:
 			  parse_host->flags &= ~VTUN_TYPE_MASK;
 			  parse_host->flags |= (yyvsp[0].num);
 			}
-#line 1787 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1784 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
@@ -1792,7 +1789,7 @@ yyreduce:
 			  parse_host->flags &= ~VTUN_PROT_MASK;
 			  parse_host->flags |= (yyvsp[0].num);
 			}
-#line 1796 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1793 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
@@ -1805,7 +1802,7 @@ yyreduce:
 			  cfg_error("This vtund binary was built with the NAT hack disabled for security purposes.");
 #endif
 			}
-#line 1809 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1806 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
@@ -1814,7 +1811,7 @@ yyreduce:
 			  parse_cmds = &parse_host->up; 
    			  llist_free(parse_cmds, free_cmd, NULL);   
 			}
-#line 1818 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1815 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
@@ -1823,7 +1820,7 @@ yyreduce:
 			  parse_cmds = &parse_host->down; 
    			  llist_free(parse_cmds, free_cmd, NULL);   
 			}
-#line 1827 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1824 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 57:
@@ -1832,7 +1829,7 @@ yyreduce:
 			  cfg_error("Unknown option '%s'",(yyvsp[0].str));
 			  YYABORT;
 			}
-#line 1836 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1833 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 58:
@@ -1843,7 +1840,7 @@ yyreduce:
 			     parse_host->zlevel = (yyvsp[0].num);
 			  }
 			}
-#line 1847 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1844 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 59:
@@ -1852,7 +1849,7 @@ yyreduce:
 			  parse_host->flags |= yylval.dnum.num1;
 		          parse_host->zlevel = yylval.dnum.num2;
   			}
-#line 1856 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1853 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
@@ -1861,7 +1858,7 @@ yyreduce:
 			  cfg_error("Unknown compression '%s'",(yyvsp[0].str));
 			  YYABORT;
 			}
-#line 1865 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1862 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 61:
@@ -1870,7 +1867,7 @@ yyreduce:
 			  if( (yyvsp[0].num) )
 			     parse_host->flags |= VTUN_KEEP_ALIVE;
 			}
-#line 1874 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1871 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 62:
@@ -1882,7 +1879,7 @@ yyreduce:
 		             parse_host->ka_maxfail  = yylval.dnum.num2;
 			  }
   			}
-#line 1886 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1883 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 63:
@@ -1891,7 +1888,7 @@ yyreduce:
 			  cfg_error("Unknown keepalive option '%s'",(yyvsp[0].str));
 			  YYABORT;
 			}
-#line 1895 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1892 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
@@ -1901,7 +1898,7 @@ yyreduce:
 			  parse_host->src_addr.name = strdup((yyvsp[0].str));
 			  parse_host->src_addr.type = VTUN_ADDR_NAME;
 			}
-#line 1905 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1902 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 68:
@@ -1911,7 +1908,7 @@ yyreduce:
 			  parse_host->src_addr.name = strdup((yyvsp[0].str));
 			  parse_host->src_addr.type = VTUN_ADDR_IFACE;
 			}
-#line 1915 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1912 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 69:
@@ -1921,7 +1918,7 @@ yyreduce:
 			  parse_host->src_addr.name = strdup((yyvsp[0].str));
 			  parse_host->src_addr.type = VTUN_ADDR_IFACE;
 			}
-#line 1925 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1922 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
@@ -1929,7 +1926,7 @@ yyreduce:
     {
 			  parse_host->src_addr.port = (yyvsp[0].num);
 			}
-#line 1933 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1930 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 71:
@@ -1938,7 +1935,7 @@ yyreduce:
 			  cfg_error("Unknown option '%s'",(yyvsp[0].str));
 			  YYABORT;
 			}
-#line 1942 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1939 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 76:
@@ -1946,7 +1943,7 @@ yyreduce:
     {
 			  memset(&parse_cmd, 0, sizeof(struct vtun_cmd));
 			}
-#line 1950 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1947 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
@@ -1955,7 +1952,7 @@ yyreduce:
 			  add_cmd(parse_cmds, parse_cmd.prog, 
 				  parse_cmd.args, parse_cmd.flags);
 			}
-#line 1959 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1956 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 78:
@@ -1964,7 +1961,7 @@ yyreduce:
 			  add_cmd(parse_cmds, strdup(vtun.ppp), strdup((yyvsp[0].str)), 
 					VTUN_CMD_DELAY);
 			}
-#line 1968 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1965 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 79:
@@ -1973,7 +1970,7 @@ yyreduce:
 			  add_cmd(parse_cmds, strdup(vtun.ifcfg),strdup((yyvsp[0].str)),
 					VTUN_CMD_WAIT);
 			}
-#line 1977 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1974 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 80:
@@ -1982,7 +1979,7 @@ yyreduce:
 			  add_cmd(parse_cmds, strdup(vtun.route),strdup((yyvsp[0].str)),
 					VTUN_CMD_WAIT);
 			}
-#line 1986 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1983 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 81:
@@ -1991,7 +1988,7 @@ yyreduce:
 			  add_cmd(parse_cmds, strdup(vtun.fwall),strdup((yyvsp[0].str)),
 					VTUN_CMD_WAIT);
 			}
-#line 1995 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 1992 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 82:
@@ -2000,7 +1997,7 @@ yyreduce:
 			  add_cmd(parse_cmds, strdup(vtun.iproute),strdup((yyvsp[0].str)),
 					VTUN_CMD_WAIT);
 			}
-#line 2004 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 2001 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 83:
@@ -2009,7 +2006,7 @@ yyreduce:
 			  cfg_error("Unknown cmd '%s'",(yyvsp[0].str));
 			  YYABORT;
 			}
-#line 2013 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 2010 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 86:
@@ -2017,7 +2014,7 @@ yyreduce:
     {
 			  parse_cmd.prog = strdup((yyvsp[0].str));
 			}
-#line 2021 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 2018 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 87:
@@ -2025,7 +2022,7 @@ yyreduce:
     {
 			  parse_cmd.args = strdup((yyvsp[0].str));
 			}
-#line 2029 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 2026 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
   case 88:
@@ -2033,11 +2030,11 @@ yyreduce:
     {
 			  parse_cmd.flags = (yyvsp[0].num);
 			}
-#line 2037 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 2034 "cfg_file.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 2041 "cfg_file.tab.c" /* yacc.c:1646  */
+#line 2038 "cfg_file.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

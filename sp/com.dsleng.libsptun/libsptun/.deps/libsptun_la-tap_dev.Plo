@@ -1,0 +1,3 @@
+libsptun_la-tap_dev.lo: tap_dev.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
