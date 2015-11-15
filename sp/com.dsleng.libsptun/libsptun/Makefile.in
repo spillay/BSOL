@@ -103,7 +103,7 @@ am__objects_2 = libsptun_la-libsptun.lo libsptun_la-main.lo \
 	libsptun_la-tun_dev.lo libsptun_la-tap_dev.lo \
 	libsptun_la-pty_dev.lo libsptun_la-pipe_dev.lo \
 	libsptun_la-tcp_proto.lo libsptun_la-udp_proto.lo \
-	libsptun_la-linkfd.lo
+	libsptun_la-linkfd.lo libsptun_la-spinfo.lo
 am__objects_3 = libsptun_la-lfd_shaper.lo libsptun_la-lfd_zlib.lo \
 	libsptun_la-lfd_lzo.lo libsptun_la-lfd_encrypt.lo \
 	libsptun_la-lfd_legacy_encrypt.lo
@@ -279,7 +279,7 @@ OBJS = libsptun.c main.c server.c client.c lib.c \
        llist.c auth.c tunnel.c lock.c netlib.c  \
        tun_dev.c tap_dev.c pty_dev.c pipe_dev.c \
        tcp_proto.c udp_proto.c \
-       linkfd.c 
+       linkfd.c spinfo.c
 
 LFD_OBJS = lfd_shaper.c lfd_zlib.c lfd_lzo.c lfd_encrypt.c lfd_legacy_encrypt.c
 lib_LTLIBRARIES = libsptun.la
@@ -382,6 +382,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsptun_la-pipe_dev.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsptun_la-pty_dev.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsptun_la-server.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsptun_la-spinfo.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsptun_la-tap_dev.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsptun_la-tcp_proto.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsptun_la-tun_dev.Plo@am__quote@
@@ -548,6 +549,13 @@ libsptun_la-linkfd.lo: linkfd.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='linkfd.c' object='libsptun_la-linkfd.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libsptun_la-linkfd.lo `test -f 'linkfd.c' || echo '$(srcdir)/'`linkfd.c
+
+libsptun_la-spinfo.lo: spinfo.c
+@am__fastdepCC_TRUE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libsptun_la-spinfo.lo -MD -MP -MF $(DEPDIR)/libsptun_la-spinfo.Tpo -c -o libsptun_la-spinfo.lo `test -f 'spinfo.c' || echo '$(srcdir)/'`spinfo.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/libsptun_la-spinfo.Tpo $(DEPDIR)/libsptun_la-spinfo.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='spinfo.c' object='libsptun_la-spinfo.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libsptun_la-spinfo.lo `test -f 'spinfo.c' || echo '$(srcdir)/'`spinfo.c
 
 libsptun_la-lfd_shaper.lo: lfd_shaper.c
 @am__fastdepCC_TRUE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libsptun_la-lfd_shaper.lo -MD -MP -MF $(DEPDIR)/libsptun_la-lfd_shaper.Tpo -c -o libsptun_la-lfd_shaper.lo `test -f 'lfd_shaper.c' || echo '$(srcdir)/'`lfd_shaper.c

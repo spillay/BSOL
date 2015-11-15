@@ -104,12 +104,12 @@ HEADERS = $(include_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AR = ar
-AUTOCONF = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run automake-1.11
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -145,7 +145,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -170,10 +170,10 @@ STRIP = strip
 VERSION = 1.0
 YACC = bison -y
 YFLAGS = 
-abs_builddir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/include
-abs_srcdir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/include
-abs_top_builddir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun
-abs_top_srcdir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun
+abs_builddir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun/include
+abs_srcdir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun/include
+abs_top_builddir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun
+abs_top_srcdir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -202,7 +202,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/install-sh
+install_sh = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -229,7 +229,7 @@ top_srcdir = ..
 
 # These files will end up in the install include directory
 # For example, /usr/include
-include_HEADERS = libsptun.h vtun.h config.h llist.h
+include_HEADERS = libsptun.h vtun.h config.h llist.h spinfo.h
 all: all-am
 
 .SUFFIXES:

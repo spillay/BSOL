@@ -103,7 +103,7 @@ am__objects_2 = libsptun_la-libsptun.lo libsptun_la-main.lo \
 	libsptun_la-tun_dev.lo libsptun_la-tap_dev.lo \
 	libsptun_la-pty_dev.lo libsptun_la-pipe_dev.lo \
 	libsptun_la-tcp_proto.lo libsptun_la-udp_proto.lo \
-	libsptun_la-linkfd.lo
+	libsptun_la-linkfd.lo libsptun_la-spinfo.lo
 am__objects_3 = libsptun_la-lfd_shaper.lo libsptun_la-lfd_zlib.lo \
 	libsptun_la-lfd_lzo.lo libsptun_la-lfd_encrypt.lo \
 	libsptun_la-lfd_legacy_encrypt.lo
@@ -136,12 +136,12 @@ am__can_run_installinfo = \
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AR = ar
-AUTOCONF = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run automake-1.11
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -179,7 +179,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -204,10 +204,10 @@ STRIP = strip
 VERSION = 1.0
 YACC = bison -y
 YFLAGS = 
-abs_builddir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/libsptun
-abs_srcdir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/libsptun
-abs_top_builddir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun
-abs_top_srcdir = /home/suresh/workspace/n1/0.6/com.dsleng.libsptun
+abs_builddir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun/libsptun
+abs_srcdir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun/libsptun
+abs_top_builddir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun
+abs_top_srcdir = /home/suresh/git/BSOL/sp/com.dsleng.libsptun
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -236,7 +236,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/suresh/workspace/n1/0.6/com.dsleng.libsptun/install-sh
+install_sh = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -279,7 +279,7 @@ OBJS = libsptun.c main.c server.c client.c lib.c \
        llist.c auth.c tunnel.c lock.c netlib.c  \
        tun_dev.c tap_dev.c pty_dev.c pipe_dev.c \
        tcp_proto.c udp_proto.c \
-       linkfd.c 
+       linkfd.c spinfo.c
 
 LFD_OBJS = lfd_shaper.c lfd_zlib.c lfd_lzo.c lfd_encrypt.c lfd_legacy_encrypt.c
 lib_LTLIBRARIES = libsptun.la
@@ -382,6 +382,7 @@ include ./$(DEPDIR)/libsptun_la-netlib.Plo
 include ./$(DEPDIR)/libsptun_la-pipe_dev.Plo
 include ./$(DEPDIR)/libsptun_la-pty_dev.Plo
 include ./$(DEPDIR)/libsptun_la-server.Plo
+include ./$(DEPDIR)/libsptun_la-spinfo.Plo
 include ./$(DEPDIR)/libsptun_la-tap_dev.Plo
 include ./$(DEPDIR)/libsptun_la-tcp_proto.Plo
 include ./$(DEPDIR)/libsptun_la-tun_dev.Plo
@@ -548,6 +549,13 @@ libsptun_la-linkfd.lo: linkfd.c
 #	source='linkfd.c' object='libsptun_la-linkfd.lo' libtool=yes \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libsptun_la-linkfd.lo `test -f 'linkfd.c' || echo '$(srcdir)/'`linkfd.c
+
+libsptun_la-spinfo.lo: spinfo.c
+	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libsptun_la-spinfo.lo -MD -MP -MF $(DEPDIR)/libsptun_la-spinfo.Tpo -c -o libsptun_la-spinfo.lo `test -f 'spinfo.c' || echo '$(srcdir)/'`spinfo.c
+	$(am__mv) $(DEPDIR)/libsptun_la-spinfo.Tpo $(DEPDIR)/libsptun_la-spinfo.Plo
+#	source='spinfo.c' object='libsptun_la-spinfo.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libsptun_la-spinfo.lo `test -f 'spinfo.c' || echo '$(srcdir)/'`spinfo.c
 
 libsptun_la-lfd_shaper.lo: lfd_shaper.c
 	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsptun_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libsptun_la-lfd_shaper.lo -MD -MP -MF $(DEPDIR)/libsptun_la-lfd_shaper.Tpo -c -o libsptun_la-lfd_shaper.lo `test -f 'lfd_shaper.c' || echo '$(srcdir)/'`lfd_shaper.c

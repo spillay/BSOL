@@ -25,7 +25,7 @@ OBJS = libsptun.c main.c server.c client.c lib.c \
        llist.c auth.c tunnel.c lock.c netlib.c  \
        tun_dev.c tap_dev.c pty_dev.c pipe_dev.c \
        tcp_proto.c udp_proto.c \
-       linkfd.c 
+       linkfd.c spinfo.c
 LFD_OBJS = lfd_shaper.c lfd_zlib.c lfd_lzo.c lfd_encrypt.c lfd_legacy_encrypt.c
 
 lib_LTLIBRARIES = libsptun.la
