@@ -136,7 +136,7 @@ AR = ar
 AUTOCONF = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run autoconf
 AUTOHEADER = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/suresh/git/BSOL/sp/com.dsleng.libsptun/missing --run automake-1.11
-AWK = gawk
+AWK = mawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
