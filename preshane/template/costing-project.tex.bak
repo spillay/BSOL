@@ -1,0 +1,81 @@
+\clearpage
+\section{Costing}
+\begin{table}[htbp]
+\caption{}
+\begin{tabular}{|l|p{10cm}|r|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Phase }} & \multicolumn{1}{c|}{\textbf{High Level Task}} & \multicolumn{1}{c|}{\textbf{Cost}} \\ \hline
+Phase 1 & Program Management/Client Liaison & R 300,000.00 \\ \hline
+ & A study would be conducted to ascertain the different types of government operational units(PhD Project) & R 540,000.00 \\ \hline
+ & A high-level catalog of e-services for the different types of government operational units(PhD Project) & R 540,000.00 \\ \hline
+ & Comparative Analysis of E-government capability(PhD Project) & R 540,000.00 \\ \hline
+ & Supervision and External Collaboration & R 750,000.00 \\ \hline
+ & Analysis of Requirements Methodology and it's Alignment to MDA & R 520,320.00 \\ \hline
+\textbf{SubTotal} & \textbf{} & \textbf{R 3,190,320.00} \\ \hline
+Phase 2 & Program Management & R 580,000.00 \\ \hline
+ & Design and Implement Technical Models & R 1,500,480.00 \\ \hline
+ & Design and Implement Domain Models & R 2,000,640.00 \\ \hline
+ & UI Model Engine & R 1,050,400.00 \\ \hline
+ & Data Modeling Engine & R 1,050,400.00 \\ \hline
+ & Business Rules Engine & R 1,400,480.00 \\ \hline
+ & Optimization Engine & R 1,280,480.00 \\ \hline
+\textbf{Sub-Total} & \textbf{} & \textbf{R 8,862,880.00} \\ \hline
+Phase 3 & Program Management & R 650,400.00 \\ \hline
+ & Design/Define and Implement a Presentation Layer & R 1,020,480.00 \\ \hline
+ & Design/Define and Implement a Business Process Layer & R 1,190,560.00 \\ \hline
+ & Design/Define and Implement a Services Layer & R 1,280,640.00 \\ \hline
+ & Design/Define and Implement a Service Component Layer & R 960,480.00 \\ \hline
+ & Design/Define and Implement a Operational Systems Layer & R 960,480.00 \\ \hline
+\textbf{SubTotal} &  & \textbf{R 6,063,040.00} \\ \hline
+ &  & R 18,116,240.00 \\ \hline
+Vat 14\% &  & R 2,536,273.60 \\ \hline
+Total &  & R 20,652,513.60 \\ \hline
+\end{tabular}
+\label{}
+\end{table}
+\clearpage
+\subsection{Research Cost Break Down}
+Since the research phase would be conducted in parallel to the implementation and it would span three years, a break down is provided below.
+\begin{table}[htbp]
+\caption{}
+\begin{tabular}{|p{6cm}|r|r|r|r|}
+\hline
+\textbf{High Level Task} & \multicolumn{1}{c|}{\textbf{Year 1}} & \multicolumn{1}{c|}{\textbf{Year 2}} & \multicolumn{1}{c|}{\textbf{Year 3}} & \multicolumn{1}{c|}{\textbf{Total}} \\ \hline
+Program Management/Client Liaison & R 100,000.00 & R 100,000.00 & R 100,000.00 & R 300,000.00 \\ \hline
+A study would be conducted to ascertain the different types of government operational units(PhD Project) & R 180,000.00 & R 180,000.00 & R 180,000.00 & R 540,000.00 \\ \hline
+A high-level catalog of e-services for the different types of government operational units(PhD Project) & R 180,000.00 & R 180,000.00 & R 180,000.00 & R 540,000.00 \\ \hline
+Comparative Analysis of E-government capability(PhD Project) & R 180,000.00 & R 180,000.00 & R 180,000.00 & R 540,000.00 \\ \hline
+Supervision and External Collaboration & R 250,000.00 & R 250,000.00 & R 250,000.00 & R 750,000.00 \\ \hline
+Analysis of Requirements Methodology and it's Alignment to MDA & R 520,320.00 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & R 520,320.00 \\ \hline
+\textbf{Total} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & R 3,190,320.00 \\ \hline
+\end{tabular}
+\label{}
+\end{table}
+
+
+
+
+
+
+
+\subsection{Payment Schedule}
+The payment process for services delivered by \vendor shall commence with the approval of each document by the \client.  Under no circumstances shall \client withhold payments to \vendor. 
+\subsection{Subsistence and Travel Costs}
+These costs shall be paid for separately by the client - depending on the number of visits the client requests to be undertaken to successfully execute the project.  The standard rate for kilometres travelled is R3.16 /km travelled and the per diem allowance per day is R241.60 / day. The client shall also be responsible for actual costs incurred for accommodation, car rental and air travel where applicable. On commencement of the project an initial downpayment would be required; as per the complying rules for \vendor and \client.
+\clearpage
+\subsection{Time Estimate}
+The time estimate is depicted by the table/schedule below. The execution time per activity is given; note that certain activities shall be performed simultaneously with others.  The actual dates for starting with the project and subsequently with the listed activities below shall be determined by the date which the project shall officially commence.
+\begin{table}[htbp]
+\centering
+\caption{Time Estimate}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|l|l|}
+\hline
+\multicolumn{ 1}{|c|}{\textbf{Phase}} & \multicolumn{ 12}{c|}{\textbf{Month}} \\ \cline{ 2- 13}
+\multicolumn{ 1}{|l|}{} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & \multicolumn{1}{c|}{11} & \multicolumn{1}{c|}{12} \\ \hline
+Phase 1 & X & X & X &X  & X & X & X & X & X & X & X & X  \\ \hline
+Phase 2 &  &  &  & X & X & X & X & X & X &  &  &  \\ \hline
+Phase 3 &  &  &  &  &  &  & X & X & X & X & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} \\ \hline
+\end{tabular}
+\label{}
+\end{table}
+

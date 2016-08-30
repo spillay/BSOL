@@ -1,0 +1,47 @@
+\select@language {american}
+\select@language {american}
+\contentsline {section}{\numberline {1}Legal}{4}
+\contentsline {subsection}{\numberline {1.1}Notice}{4}
+\contentsline {subsection}{\numberline {1.2}Approval}{4}
+\contentsline {subsection}{\numberline {1.3}Validity}{4}
+\contentsline {subsection}{\numberline {1.4}Foreword}{4}
+\contentsline {section}{\numberline {2}Project Background}{6}
+\contentsline {subsection}{\numberline {2.1}Business Problem and Opportunity}{6}
+\contentsline {subsection}{\numberline {2.2}Project Recommendation}{6}
+\contentsline {subsection}{\numberline {2.3}Resource Contingent}{8}
+\contentsline {subsection}{\numberline {2.4}Standards and Procedures}{9}
+\contentsline {section}{\numberline {3}Project Scope}{9}
+\contentsline {subsection}{\numberline {3.1}Project Scope Definition}{9}
+\contentsline {subsection}{\numberline {3.2}Project Objectives}{10}
+\contentsline {subsection}{\numberline {3.3}Project Deliverables}{10}
+\contentsline {subsection}{\numberline {3.4}Critical Success Factors}{11}
+\contentsline {section}{\numberline {4}Project Execution}{12}
+\contentsline {subsection}{\numberline {4.1}Phase 1 - Research and Analysis Phase}{12}
+\contentsline {subsection}{\numberline {4.2}Phase 2 - Development Stack Design and Implementation supported by a Requirements Phase for a Given Department Type}{12}
+\contentsline {subsubsection}{\numberline {4.2.1}Defining the Models}{12}
+\contentsline {subsubsection}{\numberline {4.2.2}Develop Model Engines to transform the models into executable artifacts}{13}
+\contentsline {subsection}{\numberline {4.3}Phase 3 - Implementation of the Technology Infrastructure and provision of Data Infrastructure}{13}
+\contentsline {section}{\numberline {5}Measurement and Acceptance Criteria}{13}
+\contentsline {section}{\numberline {6}Project Structure}{15}
+\contentsline {subsection}{\numberline {6.1}Stakeholders}{15}
+\contentsline {subsection}{\numberline {6.2}Project Steering Committee}{15}
+\contentsline {subsection}{\numberline {6.3}Project Management - Teams and Responsibilities}{15}
+\contentsline {subsection}{\numberline {6.4}\gls {UP}\tmspace +\medmuskip {.2222em}project team responsibilities}{16}
+\contentsline {subsection}{\numberline {6.5}\gls {SITA}\tmspace +\medmuskip {.2222em}project team responsibilities}{16}
+\contentsline {subsection}{\numberline {6.6}Controls Strategy}{17}
+\contentsline {subsubsection}{\numberline {6.6.1}Meetings}{17}
+\contentsline {subsubsection}{\numberline {6.6.2}Reports}{18}
+\contentsline {subsubsection}{\numberline {6.6.3}Quality Assurance}{18}
+\contentsline {subsubsection}{\numberline {6.6.4}Document Control}{18}
+\contentsline {subsubsection}{\numberline {6.6.5}Configuration Management}{18}
+\contentsline {subsubsection}{\numberline {6.6.6}Risk Management}{18}
+\contentsline {subsubsection}{\numberline {6.6.7}Risk Assessment}{19}
+\contentsline {section}{\numberline {7}High Level Project Plan}{21}
+\contentsline {subsection}{\numberline {7.1}Work Breakdown Structure}{21}
+\contentsline {section}{\numberline {8}Costing}{23}
+\contentsline {subsection}{\numberline {8.1}Research Cost Break Down}{24}
+\contentsline {subsection}{\numberline {8.2}Payment Schedule}{24}
+\contentsline {subsection}{\numberline {8.3}Subsistence and Travel Costs}{24}
+\contentsline {subsection}{\numberline {8.4}Time Estimate}{25}
+\contentsline {section}{\numberline {9}Acceptance of Proposal}{25}
+\contentsline {section}{\numberline {10}Non-disclosure of Information}{25}

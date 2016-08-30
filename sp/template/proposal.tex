@@ -1,0 +1,106 @@
+\documentclass{proposalsp}
+\usepackage{epsfig}
+%\usepackage{glossaries}
+\usepackage[nonumberlist]{glossaries}
+\usepackage{multirow}
+
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\fontfamily{fxlj}\selectfont #1}}
+\usepackage[a4paper,margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage[autolanguage]{numprint}
+%\usepackage[bottom]{footmisc}
+%\usepackage{float}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft}
+%\SetWatermarkLightness{0.9}
+\usepackage{graphicx}
+
+
+
+\makeatletter
+\@addtoreset{section}{part}
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >\m@ne
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+    {\parindent \z@ \raggedright
+     \interlinepenalty \@M
+     \normalfont\centering
+     \ifnum \c@secnumdepth >\m@ne
+       \LARGE\bfseries \partname\nobreakspace\thepart
+       \par\nobreak
+     \fi
+     \huge \bfseries #2%
+     \markboth{}{}\par}%
+    \nobreak
+    \vskip 3ex
+    \@afterheading}
+\renewcommand\partname{Topic}
+\makeatother
+
+
+
+
+\makeglossaries
+
+\newglossaryentry{UP}{%
+name={UP},%
+description={University of Pretoria}}
+\newglossaryentry{SITA}{%
+name={SITA},%
+description={South African IT Agency}}
+\newglossaryentry{EMF}{%
+name={EMF},%
+description={Entity Model Framework}}
+\newglossaryentry{DM}{%
+name={DM},%
+description={Model that would represent the structure and relationships of the business elements, in this case we would be using an \gls{EMF} Model}}
+\newglossaryentry{MDE}{%
+name={MDE},%
+description={Model Driven Engineering}}
+
+\newcommand{\client}{\gls{SITA}\:}
+\newcommand{\clients}{SITA's\:}
+\newcommand{\vendor}{\gls{UP}\:}
+\newcommand{\vendors}{UP's\:}
+\newcommand{\industry}{government\:}
+\newcommand{\project}{\textit{E-government Platform}\:}
+\newcommand{\dept}{\textit{the given Department}\:}
+
+\newcommand{\slist}{\begin{enumerate}}
+\newcommand{\spit}{\item}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
+
+\thispagestyle{fancy}
+\rfoot{Property of the University of Pretoria}
+
+\begin{document}
+\input title.tex
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\input legal.tex
+\input background-project.tex
+\input scope-project.tex 
+\input exec-project.tex
+\input criteria.tex
+\input structure-project.tex
+\input plan-project.tex
+\input costing-project.tex
+\input acceptance.tex
+\input nda.tex
+\input glossary.tex
+%\input approach/annexure.tex
+\end{document}
